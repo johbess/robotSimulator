@@ -1,16 +1,17 @@
 package com.hiq.robotSimulator;
 
 import java.io.*;
-import java.net.URL;
+import java.util.Objects;
 
 public class RobotSimulator {
     public static void main(String[] args) {
 
         Robot robot = new Robot();
 
-        String filePath = RobotSimulator.class.getClassLoader().getResource("test3").getPath();
+        String filePath = Objects.requireNonNull(RobotSimulator.class.getClassLoader().getResource("test3")).getPath();
 
         try {
+
             BufferedReader br = new BufferedReader(new FileReader(filePath));
 
             String input;
@@ -20,9 +21,9 @@ public class RobotSimulator {
             }
 
         } catch (FileNotFoundException e) {
-            System.err.println(String.format("Could not find file path %s: %s", filePath, e.getCause()));
+            System.err.printf("Could not find file path %s: %s%n", filePath, e.getCause());
         } catch (IOException e) {
-            System.err.println(String.format("Could not read next line: %s", e.getCause()));
+            System.err.printf("Could not read next line: %s%n", e.getCause());
         }
     }
 }

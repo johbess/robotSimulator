@@ -8,12 +8,10 @@ public class Robot {
 
     /**
      * Method to process a command given to the robot
-     *
      * If the length of argument is greater than 1,
      * it will either be a PLACE command or an invalid command
-     *
      * If the robot has not been placed previously
-     * @param command
+     * @param command the command fed to the robot
      */
     public void postCommand(String command) {
 
@@ -53,7 +51,6 @@ public class Robot {
 
     /**
      * Place or move the robot on the board
-     *
      * If the input is not within the boundaries,
      * the input is ignored
      *
@@ -118,7 +115,7 @@ public class Robot {
     }
 
     private void report() {
-        System.out.println(String.format("%d,%d,%s", x,y,direction.name()));
+        System.out.printf("%d,%d,%s%n", x,y,direction.name());
     }
 
     public int getX() {
