@@ -1,5 +1,6 @@
 import com.hiq.robotSimulator.Direction;
 import com.hiq.robotSimulator.Robot;
+import com.hiq.robotSimulator.RobotSimulator;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -7,86 +8,64 @@ import static org.junit.Assert.*;
 
 public class TestRobotSimulator {
 
-    private Robot sut;
+    private RobotSimulator sut;
     @Before
     public void setup() {
-        sut = new Robot();
+        sut = new RobotSimulator();
     }
 
     @Test
-    public void whenInputIsNull_RobotIgnoresCommand() {
-        sut.postCommand(null);
+    public void whenFileInputIsNull_RobotHasNotBeenPlacedOrMoved() {
+        sut.processInput(null);
 
-        assertNull(sut.getDirection());
-        assertEquals(0, sut.getX());
-        assertEquals(0, sut.getY());
+        Robot robot = sut.getRobot();
+
+        assertNull(robot.getDirection());
+        assertEquals(0, robot.getX());
+        assertEquals(0, robot.getY());
     }
 
     @Test
-    public void whenInputIsBlankString_RobotIgnoresCommand() {
-        sut.postCommand("             ");
+    public void whenFileDoesNotExist_RobotHasNotBeenPlacedOrMoved() {
+        sut.processInput("file that does not exist");
+        Robot robot = sut.getRobot();
 
-        assertNull(sut.getDirection());
-        assertEquals(0, sut.getX());
-        assertEquals(0, sut.getY());
+        assertNull(robot.getDirection());
+        assertEquals(0, robot.getX());
+        assertEquals(0, robot.getY());
     }
 
     @Test
-    public void whenInputIsInvalid_RobotIgnoresCommand() {
-        sut.postCommand("invalid input");
+    public void testCase1() {
+        sut.processInput("test1");
 
-        assertNull(sut.getDirection());
-        assertEquals(0, sut.getX());
-        assertEquals(0, sut.getY());
+        Robot robot = sut.getRobot();
+
+        assertEquals(robot.getDirection(), Direction.NORTH);
+        assertEquals(0, robot.getX());
+        assertEquals(1, robot.getY());
     }
 
     @Test
-    public void whenInputWillWalkRobotOutOfBounds_RobotStaysAtBoundary() {
-        sut.postCommand("PLACE 0,0,EAST");
-        sut.postCommand("MOVE");
-        sut.postCommand("MOVE");
-        sut.postCommand("MOVE");
-        sut.postCommand("MOVE");
-        sut.postCommand("MOVE");
-        sut.postCommand("MOVE");
-        sut.postCommand("MOVE");
-        sut.postCommand("MOVE");
-        sut.postCommand("MOVE");
+    public void testCase2() {
+        sut.processInput("test2");
 
-        assertEquals(sut.getDirection(), Direction.EAST);
-        assertEquals(4, sut.getX());
-        assertEquals(0, sut.getY());
+        Robot robot = sut.getRobot();
+
+        assertEquals(robot.getDirection(), Direction.WEST);
+        assertEquals(0, robot.getX());
+        assertEquals(0, robot.getY());
     }
 
     @Test
-    public void whenInputWillWalkRobotAnEntireLap_RobotEndsUpAtStart() {
-        sut.postCommand("PLACE 0,0,NORTH");
-        sut.postCommand("MOVE");
-        sut.postCommand("MOVE");
-        sut.postCommand("MOVE");
-        sut.postCommand("MOVE");
+    public void testCase3() {
+        sut.processInput("test3");
 
-        sut.postCommand("RIGHT");
-        sut.postCommand("MOVE");
-        sut.postCommand("MOVE");
-        sut.postCommand("MOVE");
-        sut.postCommand("MOVE");
+        Robot robot = sut.getRobot();
 
-        sut.postCommand("RIGHT");
-        sut.postCommand("MOVE");
-        sut.postCommand("MOVE");
-        sut.postCommand("MOVE");
-        sut.postCommand("MOVE");
-
-        sut.postCommand("RIGHT");
-        sut.postCommand("MOVE");
-        sut.postCommand("MOVE");
-        sut.postCommand("MOVE");
-        sut.postCommand("MOVE");
-
-        assertEquals(sut.getDirection(), Direction.WEST);
-        assertEquals(0, sut.getX());
-        assertEquals(0, sut.getY());
-
+        assertEquals(robot.getDirection(), Direction.NORTH);
+        assertEquals(3, robot.getX());
+        assertEquals(3, robot.getY());
     }
+
 }

@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d3a6752-2c81-4d3a-8496-07d0ce37802c" name="Changes" comment="initial commit, robot successfully parses test files. Need to add tests and check for bugs">
+    <list default="true" id="5d3a6752-2c81-4d3a-8496-07d0ce37802c" name="Changes" comment="fixed syntax suggestions">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hiq/robotSimulator/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestRobot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hiq/robotSimulator/RobotSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hiq/robotSimulator/RobotSimulator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestRobotSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRobotSimulator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +47,8 @@
     "Application.Main.executor": "Run",
     "Application.RobotSimulator.executor": "Run",
     "JUnit.TestRobotSimulator.executor": "Run",
+    "JUnit.TestRobotSimulator.whenFileDoesNotExist_RobotHasNotBeenPlacedOrMoved.executor": "Run",
+    "JUnit.TestRobotSimulator.whenFileInputIsNull_SimulatorIgnoresError.executor": "Run",
     "JUnit.TestRobotSimulator.whenInputIsInvalid_RobotIgnoresCommand.executor": "Run",
     "JUnit.TestRobotSimulator.whenInputIsNull_RobotIgnoresCommand.executor": "Run",
     "JUnit.TestRobotSimulator.whenInputWillWalkRobotAnEntireLap_RobotEndsUpAtStart.executor": "Run",
@@ -70,6 +75,28 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.TestRobotSimulator">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hiq.robotSimulator.Main" />
+      <module name="robot-simulator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hiq.robotSimulator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestRobot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="robot-simulator" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestRobot" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestRobotSimulator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="robot-simulator" />
       <option name="PACKAGE_NAME" value="" />
@@ -79,41 +106,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestRobotSimulator.whenInputIsInvalid_RobotIgnoresCommand" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestRobotSimulator.whenFileDoesNotExist_RobotHasNotBeenPlacedOrMoved" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="robot-simulator" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestRobotSimulator" />
-      <option name="METHOD_NAME" value="whenInputIsInvalid_RobotIgnoresCommand" />
+      <option name="METHOD_NAME" value="whenFileDoesNotExist_RobotHasNotBeenPlacedOrMoved" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestRobotSimulator.whenInputIsNull_RobotIgnoresCommand" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestRobotSimulator.whenFileInputIsNull_SimulatorIgnoresError" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="robot-simulator" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestRobotSimulator" />
-      <option name="METHOD_NAME" value="whenInputIsNull_RobotIgnoresCommand" />
+      <option name="METHOD_NAME" value="whenFileInputIsNull_SimulatorIgnoresError" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestRobotSimulator.whenInputWillWalkRobotAnEntireLap_RobotEndsUpAtStart" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestRobot.whenInputWillWalkRobotAnEntireLap_RobotEndsUpAtStart" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="robot-simulator" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestRobotSimulator" />
+      <option name="MAIN_CLASS_NAME" value="TestRobot" />
       <option name="METHOD_NAME" value="whenInputWillWalkRobotAnEntireLap_RobotEndsUpAtStart" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestRobotSimulator.whenInputWillWalkRobotOutOfBounds_RobotStaysAtBoundry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="robot-simulator" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestRobotSimulator" />
-      <option name="METHOD_NAME" value="whenInputWillWalkRobotOutOfBounds_RobotStaysAtBoundry" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -122,10 +139,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TestRobotSimulator" />
-        <item itemvalue="JUnit.TestRobotSimulator.whenInputWillWalkRobotAnEntireLap_RobotEndsUpAtStart" />
-        <item itemvalue="JUnit.TestRobotSimulator.whenInputWillWalkRobotOutOfBounds_RobotStaysAtBoundry" />
-        <item itemvalue="JUnit.TestRobotSimulator.whenInputIsInvalid_RobotIgnoresCommand" />
-        <item itemvalue="JUnit.TestRobotSimulator.whenInputIsNull_RobotIgnoresCommand" />
+        <item itemvalue="JUnit.TestRobotSimulator.whenFileDoesNotExist_RobotHasNotBeenPlacedOrMoved" />
+        <item itemvalue="JUnit.TestRobotSimulator.whenFileInputIsNull_SimulatorIgnoresError" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TestRobotSimulator" />
       </list>
     </recent_temporary>
   </component>
@@ -152,12 +169,36 @@
       <option name="presentableId" value="LOCAL−00001" />
       <updated>1725222674432</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL−00002" summary="added some initial tests">
+      <option name="closed" value="true" />
+      <created>1725353907153</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1725353907153</updated>
+    </task>
+    <task id="LOCAL−00003" summary="fixed syntax suggestions on tests and removed white space on enums">
+      <option name="closed" value="true" />
+      <created>1725354145129</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1725354145129</updated>
+    </task>
+    <task id="LOCAL−00004" summary="fixed syntax suggestions">
+      <option name="closed" value="true" />
+      <created>1725354505743</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1725354505743</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit, robot successfully parses test files. Need to add tests and check for bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit, robot successfully parses test files. Need to add tests and check for bugs" />
+    <MESSAGE value="added some initial tests" />
+    <MESSAGE value="fixed syntax suggestions on tests and removed white space on enums" />
+    <MESSAGE value="fixed syntax suggestions" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed syntax suggestions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -166,11 +207,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/hiq/robotSimulator/Turn.java</url>
           <line>2</line>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hiq/robotSimulator/RobotSimulator.java</url>
-          <line>10</line>
-          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

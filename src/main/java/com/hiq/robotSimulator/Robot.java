@@ -30,6 +30,11 @@ public class Robot {
         }
     }
 
+    /**
+     *
+     *
+     * @param command
+     */
     private void processPlaceCommand(String command) {
         String[] commandArr = command.replace(",", " ").split(" ");
 
@@ -67,6 +72,10 @@ public class Robot {
         }
     }
 
+    /**
+     * Moves the robot one step
+     * in the current direction
+     */
     private void move() {
         switch (direction) {
             case EAST -> {
