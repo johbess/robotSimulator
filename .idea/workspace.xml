@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d3a6752-2c81-4d3a-8496-07d0ce37802c" name="Changes" comment="fixed syntax suggestions">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hiq/robotSimulator/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/TestRobot.java" afterDir="false" />
+    <list default="true" id="5d3a6752-2c81-4d3a-8496-07d0ce37802c" name="Changes" comment="refactored robot simulator away from main to make it testable, fixed some syntax errors">
+      <change afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hiq/robotSimulator/RobotSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hiq/robotSimulator/RobotSimulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRobotSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRobotSimulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +27,9 @@
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="nigxwsmo" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -53,6 +54,9 @@
     "JUnit.TestRobotSimulator.whenInputIsNull_RobotIgnoresCommand.executor": "Run",
     "JUnit.TestRobotSimulator.whenInputWillWalkRobotAnEntireLap_RobotEndsUpAtStart.executor": "Run",
     "JUnit.TestRobotSimulator.whenInputWillWalkRobotOutOfBounds_RobotStaysAtBoundry.executor": "Run",
+    "Maven.robot-simulator [clean,install].executor": "Run",
+    "Maven.robot-simulator [compile].executor": "Run",
+    "Maven.robot-simulator [deploy].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -74,7 +78,7 @@
       <recent name="C:\Users\46761\Desktop\HiQ Intervju\Robot Simulator\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestRobotSimulator">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.hiq.robotSimulator.Main" />
       <module name="robot-simulator" />
@@ -138,10 +142,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.TestRobotSimulator" />
         <item itemvalue="JUnit.TestRobotSimulator.whenFileDoesNotExist_RobotHasNotBeenPlacedOrMoved" />
         <item itemvalue="JUnit.TestRobotSimulator.whenFileInputIsNull_SimulatorIgnoresError" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.TestRobotSimulator" />
       </list>
     </recent_temporary>
@@ -190,7 +194,14 @@
       <option name="presentableId" value="LOCAL−00004" />
       <updated>1725354505743</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL−00005" summary="refactored robot simulator away from main to make it testable, fixed some syntax errors">
+      <option name="closed" value="true" />
+      <created>1725362347643</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1725362347643</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -198,7 +209,8 @@
     <MESSAGE value="added some initial tests" />
     <MESSAGE value="fixed syntax suggestions on tests and removed white space on enums" />
     <MESSAGE value="fixed syntax suggestions" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed syntax suggestions" />
+    <MESSAGE value="refactored robot simulator away from main to make it testable, fixed some syntax errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored robot simulator away from main to make it testable, fixed some syntax errors" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
