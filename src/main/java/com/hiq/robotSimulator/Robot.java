@@ -30,11 +30,6 @@ public class Robot {
         }
     }
 
-    /**
-     *
-     *
-     * @param command
-     */
     private void processPlaceCommand(String command) {
         String[] commandArr = command.replace(",", " ").split(" ");
 
